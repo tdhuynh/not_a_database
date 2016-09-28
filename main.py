@@ -1,5 +1,6 @@
 import csv
 
+
 with open("main.csv") as open_file:
     data = list(csv.reader(open_file))
     new = ""
@@ -12,6 +13,10 @@ with open("main.csv") as open_file:
                 print(row)
                 new = input("Would you like to [c]reate a new user or [l]og out? ")
                 if new == 'c'.lower():
+                    new_username = input("New username: ")
+                    new_password = input("New password: ")
+                    new_full_name = input("New full name: ")
+                    new_fact = input("New fact: ")
                     break
                 else:
                     print("Bye.")
@@ -19,11 +24,6 @@ with open("main.csv") as open_file:
         else:
             print("Try again.")
 
-
-new_username = input("New username: ")
-new_password = input("New password: ")
-new_full_name = input("New full name: ")
-new_fact = input("New fact: ")
 
 with open("main.csv", 'a') as open_file:
     data = csv.writer(open_file)
